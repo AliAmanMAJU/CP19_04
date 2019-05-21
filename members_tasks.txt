@@ -1,11 +1,11 @@
 Tasks for Group Members:
 
- Hammad Asif (Leader): Will work on Pyshark.
+ Hammad Asif (Leader): Will work on Program and gui Integration.
 
- Muhammad Ammad:Will learn about Wire shark.
+ Muhammad Ammad:Will learn about Tkinter and create report.
 
  Ali Aman: Will work on GUI programming in python.
 
- Sajjad Ali: Will work on PyShark.
+ Sajjad Ali: Will work on report.
 
- Hassam Nusrat: Will explore about FUTTY in Wire Shark.
+ Hassam Nusrat: Will work on Program and gui Integration.
