@@ -6,22 +6,22 @@
 
 import time
 import datetime
-import sys
 from tkinter import*
 
 
 root =Tk()
-root.title("Pyroll Systems")
-root.geometry("1200x620+0+0")
+root.title("Payment Management Systems")
+root.geometry("1400x620+0+0")
 #root.resizable(0,0)
+root.configure(background='cyan')
 
-Tops =Frame(root,width=1200,height=70,bd=10,relief="raise")
+Tops =Frame(root,width=1200,height=70,bd=10,relief="raise", bg="black")
 Tops.pack(side=TOP)
 
-f1=Frame(root, width =600, height=600,bd=8,relief="raise")
+f1=Frame( root, width =600, height=600,bd=8,relief="raise", bg="white")
 f1.pack(side=LEFT)
 
-f2=Frame(root, width =600, height=700,bd=8,relief="raise")
+f2=Frame(root, width =600, height=700,bd=8,relief="raise", bg="white")
 f2.pack(side=RIGHT)
 
 f1a=Frame(f1,width =600,height=200,bd=20, relief="raise")
@@ -30,7 +30,7 @@ f1a.pack(side=TOP)
 f1b=Frame(f1,width =600,height=600,bd=20,relief="raise")
 f1b.pack(side=TOP)
 
-lblinfo=Label(Tops, font=("Castellar",40,"bold") , text= " Payment Management System ", bd=8)
+lblinfo=Label(Tops, font=("Castellar",40,"bold"), text= " Payment Management System ", bd=8)
 lblinfo.grid(row=0,column=0)
 
 def reset():    
@@ -52,17 +52,21 @@ def iExit():
     return
 
 def EnterInfo():
+	
+    txtPaySlip.delete("1.0",END)
     txtPaySlip.insert(END, "\t   Pay Slip            \t\n")
-    txtPaySlip.insert(END, "Name\t\t: "+Name.get()+"\n")
-    txtPaySlip.insert(END, "Address\t\t: "+Address.get()+"\n")
-    txtPaySlip.insert(END, "Employer\t\t: "+Employer.get()+"\n")
-    txtPaySlip.insert(END, "NI Number\t\t: "+NI_Number.get()+"\n")
-    txtPaySlip.insert(END, "Hours Worked\t\t: "+Hours_Worked.get()+"\n")
-    txtPaySlip.insert(END, "Hours Rate\t\t: "+Hours_Rate.get()+"\n")
-    txtPaySlip.insert(END, "Tax\t\t: "+Tax.get()+"\n")
-    txtPaySlip.insert(END, "Over Time\t\t: "+Over_Time.get()+"\n")
-    txtPaySlip.insert(END, "Gross Pay\t\t: "+Gross_Pay.get()+"\n")
-    txtPaySlip.insert(END, "Net Pay\t\t: "+Net_Pay.get()+"\n")
+	
+    txtPaySlip.insert(END, "Date\t: "+Dateoforder.get()+"\n")
+    txtPaySlip.insert(END, "Name\t: "+Name.get()+"\n")
+    txtPaySlip.insert(END, "Address\t: "+Address.get()+"\n")
+    txtPaySlip.insert(END, "Employer\t: "+Employer.get()+"\n")
+    txtPaySlip.insert(END, "NIC Number\t: "+NI_Number.get()+"\n")
+    txtPaySlip.insert(END, "Hours Worked\t: "+Hours_Worked.get()+"\n")
+    txtPaySlip.insert(END, "Hours Rate\t: "+Hours_Rate.get()+"\n")
+    txtPaySlip.insert(END, "Tax\t: "+Tax.get()+"\n")
+    txtPaySlip.insert(END, "Over Time\t: "+Over_Time.get()+"\n")
+    txtPaySlip.insert(END, "Gross Pay\t: "+Gross_Pay.get()+"\n")
+    txtPaySlip.insert(END, "Net Pay\t: "+Net_Pay.get()+"\n")
     
     
 def payment():
@@ -105,11 +109,11 @@ Dateoforder.set(time.strftime("%d/%m/%Y"))
 lblName=Label(f1a, text="NAME", font=("Times New Roman", 14,"bold"), bd=15).grid(row=0,column=0)
 lblAddress=Label(f1a, text="ADDRESS", font=("Times New Roman", 14,"bold"), bd=15).grid(row=0,column=2)
 lblEmployer=Label(f1a, text="EMPLOYER", font=("Times New Roman", 14,"bold"), bd=15).grid(row=1,column=0)
-lblNI_Number=Label(f1a, text="NI NUMBER", font=("Times New Roman", 14,"bold"), bd=15).grid(row=1,column=2)
+lblNI_Number=Label(f1a, text="NIC NUMBER", font=("Times New Roman", 14,"bold"), bd=15).grid(row=1,column=2)
 lblHours_Worked=Label(f1a, text="HOURS WORKED", font=("Times New Roman", 14,"bold"), bd=15).grid(row=2,column=0)
 lblHours_Rate=Label(f1a, text="HOURS RATE", font=("Times New Roman", 14,"bold"), bd=15).grid(row=2,column=2)
-lblTax=Label(f1a, text="TAX", font=("Times New Roman", 14,"bold"), bd=15).grid(row=3,column=0)
-lblOver_Time=Label(f1a, text="OVER TIME", font=("Times New Roman", 14,"bold"), bd=15).grid(row=3,column=2)
+lblOver_Time=Label(f1a, text="OVER TIME", font=("Times New Roman", 14,"bold"), bd=15).grid(row=3,column=0)
+lblTax=Label(f1a, text="TAX", font=("Times New Roman", 14,"bold"), bd=15).grid(row=3,column=2)
 lblGross_Pay=Label(f1a, text="GROSS PAY", font=("Times New Roman", 14,"bold"), bd=15).grid(row=4,column=0)
 lblNet_Pay=Label(f1a, text="NET PAY", font=("Times New Roman", 14,"bold"), bd=15).grid(row=4,column=2)
 
@@ -133,11 +137,11 @@ etxtHours_Worked.grid(row=2, column=1)
 etxtHours_Rate=Entry(f1a, textvariable=Hours_Rate,font=("Courier New", 16,"bold"),bd=16,width=15, justify="left")
 etxtHours_Rate.grid(row=2, column=3)
 
-etxtTax=Entry(f1a, textvariable=Tax,font=("Courier New", 16,"bold"),bd=16,width=15, justify="left")
-etxtTax.grid(row=3, column=1)
-
 etxtOver_Time=Entry(f1a, textvariable=Over_Time,font=("Courier New", 16,"bold"),bd=16,width=15, justify="left")
-etxtOver_Time.grid(row=3, column=3)
+etxtOver_Time.grid(row=3, column=1)
+
+etxtTax=Entry(f1a, textvariable=Tax,font=("Courier New", 16,"bold"),bd=16,width=15, justify="left")
+etxtTax.grid(row=3, column=3)
 
 etxtGross_Pay=Entry(f1a, textvariable=Gross_Pay,font=("Courier New", 16,"bold"),bd=16,width=15, justify="left")
 etxtGross_Pay.grid(row=4, column=1)
@@ -145,9 +149,10 @@ etxtGross_Pay.grid(row=4, column=1)
 etxtNet_Pay=Entry(f1a, textvariable=Net_Pay,font=("Courier New", 16,"bold"),bd=16,width=15, justify="left")
 etxtNet_Pay.grid(row=4, column=3)
 
-lblPaySlip=Label(f2,textvariable=Dateoforder, font=("Courier New", 21, "bold")).grid(row=0, column=0)
+#lblPaySlip=Label(f2,bg="white", textvariable=Dateoforder, font=("Courier New", 21, "bold")).grid(row=0, column=0)
+lblPaySlip=Label(f2,bg="white", text="Pay Slip", font=("Courier New", 21, "bold")).grid(row=0, column=0)
 
-txtPaySlip=Text(f2,height=19,width=20,bd=16, font=("Courier New", 14, "bold"))
+txtPaySlip=Text(f2,height=19,width=40,bd=16, font=("Courier New", 14, "bold"))
 txtPaySlip.grid(row=1, column=0)
 
 btnsalary=Button(f1b, text="Weekly Salary", padx=17,pady=16,bd=8,fg="black",
