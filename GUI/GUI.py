@@ -4,17 +4,18 @@ from tkinter import*
 
 
 root =Tk()
-root.title("Pyroll Systems")
+root.title("Payment Management Systems")
 root.geometry("1200x620+0+0")
 #root.resizable(0,0)
+root.configure(background='cyan')
 
-Tops =Frame(root,width=1200,height=70,bd=10,relief="raise")
+Tops =Frame(root,width=1200,height=70,bd=10,relief="raise", bg="black")
 Tops.pack(side=TOP)
 
-f1=Frame(root, width =600, height=600,bd=8,relief="raise")
+f1=Frame( root, width =600, height=600,bd=8,relief="raise", bg="white")
 f1.pack(side=LEFT)
 
-f2=Frame(root, width =600, height=700,bd=8,relief="raise")
+f2=Frame(root, width =600, height=700,bd=8,relief="raise", bg="white")
 f2.pack(side=RIGHT)
 
 f1a=Frame(f1,width =600,height=200,bd=20, relief="raise")
@@ -82,7 +83,7 @@ etxtNet_Pay.grid(row=4, column=3)
 
 lblPaySlip=Label(f2, font=("Courier New", 21, "bold")).grid(row=0, column=0)
 
-txtPaySlip=Text(f2,height=19,width=20,bd=16, font=("Courier New", 14, "bold"))
+txtPaySlip=Text(f2,height=19,width=40,bd=16, font=("Courier New", 14, "bold"))
 txtPaySlip.grid(row=1, column=0)
 
 btnsalary=Button(f1b, text="Weekly Salary", padx=17,pady=16,bd=8,fg="black",
